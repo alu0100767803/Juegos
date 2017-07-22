@@ -5,8 +5,6 @@ package TresEnRaya;
 
 import javax.swing.JFrame;
 
-import es.esit.ull.PAI.Practica13.Datos;
-
 /**
  * @author Jorge
  *
@@ -15,7 +13,7 @@ public class VentanaInformacion extends JFrame{
 	
 	 private final int ALTO_VENTANA = 300;
 	  private final int ANCHO_VENTANA = 400;
-	  private final String TITULO_VENTANA = "Datos";
+	  private final String TITULO_VENTANA = "Información";
 
 	  private Informacion informacion;
 

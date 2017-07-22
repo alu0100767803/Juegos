@@ -3,6 +3,8 @@
  */
 package TresEnRaya;
 
+import java.awt.BorderLayout;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -12,14 +14,18 @@ import javax.swing.JPanel;
  */
 public class PanelBotones extends JPanel {
 	
-	private final String NUEVO = "Nuevo";
+	private final String NUEVO = "Nuevo juego";
 	
 	private JButton botonNuevo;
+	private BotonInformacion botonInformacion;
 	
 	public PanelBotones(){
+		setLayout(new BorderLayout());
 		botonNuevo = new JButton(getNUEVO());
+		botonInformacion = new BotonInformacion();
 		
-		add(botonNuevo); 
+		add(BorderLayout.CENTER, botonNuevo);
+		add(BorderLayout.SOUTH, botonInformacion.getInformacion());
 	}
 	
 	/*
@@ -38,4 +44,14 @@ public class PanelBotones extends JPanel {
 		return NUEVO;
 	}
 
+	public BotonInformacion getBotonInformacion() {
+		return botonInformacion;
+	}
+
+	public void setBotonInformacion(BotonInformacion botonInformacion) {
+		this.botonInformacion = botonInformacion;
+	}
+
+	
+	
 }

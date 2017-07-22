@@ -5,6 +5,7 @@ package TresEnRaya;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JPanel;
 
 /**
  * @author Jorge
@@ -22,9 +23,12 @@ public class BotonInformacion {
 	
 	public BotonInformacion(){
 		
-		icono = new ImageIcon("./images/i.png");
+		icono = new ImageIcon("i.png");
     iconoEscala = new ImageIcon(icono.getImage().getScaledInstance(getANCHO_ICONO(), getALTO_ICONO(), java.awt.Image.SCALE_DEFAULT));
+    
     informacion = new JButton(iconoEscala);
+    informacion.setBorder(null);
+		informacion.setContentAreaFilled(false);
 	}
 	
 	/*
