@@ -40,6 +40,7 @@ public class PanelJuego extends JPanel {
 		}
 	}
 	
+	
 	/*
 	 * ----------------------------------------- Getters y Setters ----------------------------------
 	 */
