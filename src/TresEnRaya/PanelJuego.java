@@ -65,6 +65,10 @@ public class PanelJuego extends JPanel {
 		return TAMANYO;
 	}
 	
-	
+	public Casilla getCasilla(int i, int j) {
+		return tablero[i][j];
+	}
+
+		
 	
 }

@@ -41,7 +41,11 @@ public class Controlador extends JPanel {
 	
 	public void anyadirListeners(){
 		getBotonInformacion().addActionListener(new Listener());
-		this.addMouseListener(new Mouser());
+		for(int i = 0; i < getPanelJuego().getTAMANYO(); i++){
+			for(int j = 0; j < getPanelJuego().getTAMANYO(); j++) {
+				getPanelJuego().getCasilla(i, j).addMouseListener(new Mouser());
+			}
+		}
 	}
 	
 	class Listener implements ActionListener{
@@ -56,30 +60,37 @@ public class Controlador extends JPanel {
 	class Mouser implements MouseListener{
 
 		@Override
-		public void mouseClicked(MouseEvent arg0) {
+		public void mouseClicked(MouseEvent e) {
+			for(int i = 0; i < getPanelJuego().getTAMANYO(); i++) {
+				for(int j = 0; j < getPanelJuego().getTAMANYO(); j++) {
+					if(e.getSource() == getPanelJuego().getCasilla(i, j)){
+						getPanelJuego().getCasilla(i, j).colocarX_();
+					}
+				}
+				System.out.println(e.getSource().getClass());
+			}
+			
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
 			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
-		public void mouseEntered(MouseEvent arg0) {
+		public void mouseExited(MouseEvent e) {
 			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
-		public void mouseExited(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mousePressed(MouseEvent arg0) {
+		public void mousePressed(MouseEvent e) {
 
 		}
 
 		@Override
-		public void mouseReleased(MouseEvent arg0) {
+		public void mouseReleased(MouseEvent e) {
 			// TODO Auto-generated method stub
 			
 		}
